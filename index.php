@@ -1,4 +1,9 @@
 <?php
+
+$lifetime = 60 * 60 * 24 * 365; // 1 year in seconds
+session_set_cookie_params($lifetime, '/');
+session_start();
+
 $task_list = filter_input(INPUT_POST, 'tasklist', FILTER_DEFAULT, 
         FILTER_REQUIRE_ARRAY);
 if ($task_list === NULL) {
